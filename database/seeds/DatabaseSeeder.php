@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Auth;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,7 +15,11 @@ class DatabaseSeeder extends Seeder
        $this->call([
         UsersTableSeeder::class,
         PostsTableSeeder::class,
-        CommentsTableSeeder::class,
     ]);
     }
+
+    protected function guard()
+{
+    return Auth::guard('guard-name');
+}
 }

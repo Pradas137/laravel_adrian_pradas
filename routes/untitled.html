@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Usuaris</h1>
+	@foreach($users as $user)
+		<li>[{{$user->id}}] {{$user->name}}
+			nposts={{$user->post()->count()}}</li>
+		<li>
+			<ol>
+				@foreach($user-> $posts() as $post)<li></li>
+			</ol>
+		</li>
+	@endforeach
+</body>
+</html>

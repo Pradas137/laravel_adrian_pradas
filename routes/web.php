@@ -12,8 +12,7 @@
 */
 
 Route::get('newpost', function () {
-    return view('welcome');
-
+    return view('newpost');
 })->middleware('auth');
 
 Route::get('/', function () {
@@ -26,3 +25,7 @@ Route::get('/usuaris', function () {
 	//render
     return view('usuaris',["users"=>$users]);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
