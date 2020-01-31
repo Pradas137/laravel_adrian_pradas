@@ -29,3 +29,5 @@ Route::get('/usuaris', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('postadmin', 'PostController');
